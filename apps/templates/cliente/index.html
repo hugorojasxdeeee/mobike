@@ -1,0 +1,92 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobike registro</title>
+     <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/icono2.png' %}">
+ <link rel="stylesheet" type="text/css" href="{% static 'css/estilosF.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>Formulario</title>
+</head>
+
+<body onload="cargarProvincias()">
+    
+<div class="contenedor">
+            <header>
+               <div class="contenedor">
+        <h1 class="icon-dog">Mobike</h1>
+        <input type="checkbox" id="menu-bar">
+        <label class="fontawesome-align-justify" for="menu-bar"></label>
+                  <nav class="menu">
+                    <a href="index.html">Inicio</a>
+                    <a href="">Quienes somos</a>
+                    <a href="arriendo.html">Arriendo</a>
+                    <a href="formulario.html">Registro</a>
+                  </nav>
+                </div>
+            </header>
+</div>
+
+       
+    <main>
+            <section id="banner">
+                <div class="slider">
+    <ul>
+                <img src="{% static 'img/bici2.jpg' %}">
+                <img src="{% static 'img/slider3.jpg' %}">
+
+           </ul>
+</div>
+
+                <div class="contenedor">
+                    <h2>¿Para qué caminar?</h2>
+                    <p>Con mobike, el transporte es hoy</p>
+                </div>
+            </section>
+            
+        </main>
+        
+
+<div class="container">
+    <div class="col-xl-12"  style="background-color:#1B128C">
+      <div class="info">
+            <p class="numero"></p>
+            <p class="numero"</p>
+                <div id="redes">
+                    <div class="redes"> 
+                      <a href="http://www.facebook.com" ><img src="{% static 'img/face.tiff' width="50" height="50" %}"> </a>
+                        <a href="http://www.instagram.com" > <img src="{% static 'img/ig.tiff' width="50" height="50" %}"> </a>
+                        <a href="https://plus.google.com" ><img src="{% static 'img/plus.tiff' width="50" height="50" %}"> </a>
+                        <a href="http://www.twitter.com" >  <img src="{% static 'img/tiw.tiff' width="50" height="50" %}"> </a>
+
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+{% block content %}
+<div class="fuera">
+  <div class="hola" >
+        <div class="form__top">
+            <h2>Formulario</h2>
+        </div>      
+<form method="post" name="formulario1" class="form__reg" action="">
+    {% csrf_token %}
+{{ form.as_p }}
+    
+<button type="submit" class="save btn btn-default">Enviar</button>
+</form>
+{% endblock %}
+</div>
+</div>
+<footer class="row">
+            <div class="col-xs-12">
+                <div class="footer">
+                    <h3>Desarrollo Web y Mobile</h3>
+                </div>
+            </div>
+</footer>
+

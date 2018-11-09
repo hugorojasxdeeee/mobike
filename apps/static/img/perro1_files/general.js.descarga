@@ -1,0 +1,45 @@
+$( document ).ready(function() {
+
+  /*
+    ------------------------------
+    Methods
+  */
+
+    var onDatatablePageChange = function () {
+        $('.form-submitter').click(function(event) {
+            event.preventDefault();
+            $(this).find('form').submit();
+        });
+
+        $('.form-submitter-confirmated').click(function(event) {
+            event.preventDefault();
+            if(confirm($(this).attr('data-question'))) {
+                $(this).find('form').submit();
+            }
+        });
+    }
+
+    var init = function() {
+        onDatatablePageChange(); // First call
+    }();
+
+  /*
+    ------------------------------
+    Events
+  */
+
+    $('.featured-slide').slick({
+        dots: true,
+        infinite: true,
+        autoplay: true,
+        speed: 500
+    });
+
+    $('.view-more').click(function(){
+        event.preventDefault();
+        $('.hide').show();
+        $('.hide').removeClass('hide');
+        $('.view-more').hide();
+    });
+
+});
